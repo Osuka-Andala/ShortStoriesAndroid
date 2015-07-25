@@ -14,7 +14,7 @@ import android.widget.ArrayAdapter;
 public class Fragment extends ListFragment {
 
         public static String[] ShortStories = {"ReDefinition", "OneResolution", "Silence", "Love", "Pray", "Remember", "Defending", "ShadyGlasses"};
-        public static int[] images = {};
+        public static int[] images = {R.drawable.redefinition, R.drawable.resolution, R.drawable.silence, R.drawable.trueloveis, R.drawable.pray, R.drawable.remeber, R.drawable.faith, R.drawable.sunglasses};
    public Fragment() {
 
     }
