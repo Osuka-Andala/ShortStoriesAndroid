@@ -24,7 +24,7 @@ public class Fragment extends ListFragment {
                 "They don't realize they no longer in darkness..."};
         public static String[] Stories = {"fchvfjhvcju", "fifjriejf", "jfurfhur", "fjirejfoiref", "firjfirjf", "heuhjifcr", "jfirejfjf", "hfhffhfhjrnvc"};
 
-   private Callbacks activity;
+         protected Callbacks activity;
 
 
    public Fragment() {
@@ -68,7 +68,7 @@ public class Fragment extends ListFragment {
 
     }
         public interface Callbacks{
-            public void onItemSelected(String title, int image, String preview, String story);
+            public void onItemSelected(String title, int image,String story);
 
         }
 
@@ -76,13 +76,13 @@ public class Fragment extends ListFragment {
     public void onListItemClick(ListView lv, View v, int position, long id){
         String title = ShortStories[position];
         int image = images[position];
-        String preview = previews[position];
         String story = Stories[position];
     }
 
+    @Override
     public void onAttach(Activity activity){
         super.onAttach(activity);
-        this.activity = (Callbacks) activity;
+        this.activity = (Callbacks)activity;
 
     }
 }
