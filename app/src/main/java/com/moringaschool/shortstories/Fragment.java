@@ -53,6 +53,10 @@ public class Fragment extends ListFragment {
             ImageView iv = (ImageView) row.findViewById(R.id.oneresolution);
             TextView tv = (TextView) row.findViewById(R.id.titletextview);
             TextView tvv = (TextView) row.findViewById(R.id.previewtextview);
+
+            iv.setImageResource(images[position]);
+            tv.setText(titles[position]);
+            tvv.setText(previews[position]);
             return row;
         }
 
