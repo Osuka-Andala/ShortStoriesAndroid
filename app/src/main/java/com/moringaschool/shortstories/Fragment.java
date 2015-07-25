@@ -1,14 +1,14 @@
 package com.moringaschool.shortstories;
 
 import android.app.ListFragment;
-import android.support.v7.app.ActionBarActivity;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 
 public class Fragment extends ListFragment {
@@ -22,7 +22,32 @@ public class Fragment extends ListFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootview = inflater.inflate(R.layout.activity_fragment, container,false);
-        setListAdapter(new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, ShortStories ));
+        setListAdapter(new Myadapter(getActivity(), R.layout.activity_fragment,ShortStories,images,previews));
         return super.onCreateView(inflater, container, savedInstanceState);
+    }
+
+    private class Myadapter extends ArrayAdapter<String>{
+
+        String[] titles, previews;
+        int[] images;
+
+        private Myadapter(Context context,int resource, String[] title, int[] images, String[] previews){
+            super(context, resource, title);
+            this.titles = title;
+            this.images = images;
+            this.previews = previews;
+        }
+
+        @Override
+        public View getView(int position, View contentview, ViewGroup parent){
+            LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            View row = inflater.inflate(R.layout.customize, parent, false);
+
+            ImageView iv = (ImageView) row.findViewById(R.id.oneresolution);
+            TextView tv = (TextView) row.findViewById(R.id.titletextview);
+            TextView tvv = (TextView) row.findViewById(R.id.previewtextview);
+            return row;
+        }
+
     }
 }
