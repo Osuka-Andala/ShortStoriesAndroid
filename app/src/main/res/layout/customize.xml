@@ -29,12 +29,16 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="Re Definition"
                 android:id="@+id/title"/>
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" 
+                android:layout_height="wrap_content"
+                android:text="You may have noticed that I have not written anything in a long time.
+I will not make any excuses but I will give you an actual reason... "
                 android:id="@+id/preview"/>
+
         </LinearLayout>
 
     </LinearLayout>
