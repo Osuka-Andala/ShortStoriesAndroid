@@ -12,6 +12,9 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Fragment myfragment = new Fragment();
+        getFragmentManager().beginTransaction().add(R.id.main,myfragment).commit();
     }
 
     @Override
