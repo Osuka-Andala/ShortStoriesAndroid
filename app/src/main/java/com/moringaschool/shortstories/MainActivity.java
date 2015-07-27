@@ -7,7 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity implements Fragment.Callbacks {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +42,6 @@ public class MainActivity extends ActionBarActivity {
 
      public  void onItemSelected(String title, int image,String story){
          Intent intent = new Intent(MainActivity.this, Stories.class);
-         startActivity(intent);
+         startActivityForResult(intent, 2);
     }
 }
