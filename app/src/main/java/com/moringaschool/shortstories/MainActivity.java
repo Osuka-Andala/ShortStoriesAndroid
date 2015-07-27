@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.parse.Parse;
+
 
 public class MainActivity extends ActionBarActivity implements Fragment.Callbacks {
 
@@ -13,6 +15,12 @@ public class MainActivity extends ActionBarActivity implements Fragment.Callback
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        // Enable Local Datastore.
+        Parse.enableLocalDatastore(this);
+
+        Parse.initialize(this, "obTCx5keuvHnYeQy8EmPYWZqyAjc8dRwtfJXtCYz", "EVcZMne6AdPrJptHmQJptBds3YB8JKdE1Eas5FPS");
 
         Fragment myfragment = new Fragment();
         getFragmentManager().beginTransaction().add(R.id.main,myfragment).commit();
